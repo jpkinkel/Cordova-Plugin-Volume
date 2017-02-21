@@ -88,7 +88,23 @@
 	self.myVolumeView.showsVolumeSlider = NO;
 	self.myVolumeView.showsRouteButton = NO;
 }
+- (void)setVolumeSlider:(CDVInvokedUrlCommand *)command
+{
+    self.mpVolumeViewParentView.hidden = YES;
+	self.myVolumeView.showsVolumeSlider = NO;
 
+	NSArray* arguments = [command arguments];
+	NSUInteger argc = [arguments count];
+
+    if (argc < 1) { // at a minimum we need the value to be set...
+        return;
+    }
+    float setVolume = [[arguments objectAtIndex:0] floatValue];
+
+    [volumeViewSlider setValue:setVolume animated:NO];
+    [volumeViewSlider sendActionsForControlEvents:UIControlEventTouchUpInside];
+
+}
 - (void)showVolumeSlider:(CDVInvokedUrlCommand *)command
 {
 	BOOL enableRoute = [[command.arguments objectAtIndex:0] boolValue];
