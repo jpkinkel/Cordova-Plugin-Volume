@@ -27,5 +27,6 @@
 - (void)createVolumeSlider:(CDVInvokedUrlCommand *)command;
 - (void)showVolumeSlider:(CDVInvokedUrlCommand *)command;
 - (void)hideVolumeSlider:(CDVInvokedUrlCommand *)command;
+- (void)setVolumeSlider:(CDVInvokedUrlCommand *)command;
 
 @end
