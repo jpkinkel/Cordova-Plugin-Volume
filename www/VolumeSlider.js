@@ -31,5 +31,11 @@ module.exports = {
 	 */
 	hideVolume : function() {
 		exec(null, null, "VolumeSlider","hideVolumeSlider", []);
-	}
+	},
+	/**
+     * Set the device's master volume
+     */
+    setVolumeSlider : function(set_volume) {
+        exec(null, null, "VolumeSlider","setVolumeSlider", [set_volume]);
+    },
 };
