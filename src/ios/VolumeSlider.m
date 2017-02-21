@@ -31,8 +31,8 @@ UISlider* volumeViewSlider = nil;
 
 #pragma mark -
 #pragma mark VolumeSlider
-- (NSString*)getVolume:(CDVInvokedUrlCommand *)command {
-	
+- (float)getVolume:(CDVInvokedUrlCommand *)command {
+	return volumeViewSlider.value;
 }
 - (void) createVolumeSlider:(CDVInvokedUrlCommand *)command
 {
