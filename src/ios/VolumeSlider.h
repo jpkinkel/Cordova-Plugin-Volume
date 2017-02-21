@@ -28,6 +28,6 @@
 - (void)showVolumeSlider:(CDVInvokedUrlCommand *)command;
 - (void)hideVolumeSlider:(CDVInvokedUrlCommand *)command;
 - (void)setVolumeSlider:(CDVInvokedUrlCommand *)command;
-- (void)getVolume:(CDVInvokedUrlCommand *)command;
+- (NSString*)getVolume:(CDVInvokedUrlCommand *)command;
 
 @end
