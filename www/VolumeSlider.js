@@ -36,7 +36,7 @@ module.exports = {
 	 * Hide the volume slider
 	 */
 	getVolume : function() {
-		exec(null, null, "VolumeSlider","getVolume", []);
+		return exec(null, null, "VolumeSlider","getVolume", []);
 	},
 	/**
      * Set the device's master volume
