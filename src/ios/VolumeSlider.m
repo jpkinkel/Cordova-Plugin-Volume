@@ -31,7 +31,9 @@ UISlider* volumeViewSlider = nil;
 
 #pragma mark -
 #pragma mark VolumeSlider
-
+- (NSString*)getVolume:(CDVInvokedUrlCommand *)command {
+	
+}
 - (void) createVolumeSlider:(CDVInvokedUrlCommand *)command
 {
 	NSArray* arguments = [command arguments];
@@ -101,6 +103,7 @@ UISlider* volumeViewSlider = nil;
     }
     userVolume = volumeViewSlider.value;
 }
+
 - (void)setVolumeSlider:(CDVInvokedUrlCommand *)command
 {
     self.mpVolumeViewParentView.hidden = YES;
