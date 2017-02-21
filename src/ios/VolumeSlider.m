@@ -14,6 +14,9 @@
 
 @synthesize mpVolumeViewParentView, myVolumeView, callbackId;
 
+float userVolume  = 0.2;
+UISlider* volumeViewSlider = nil;
+
 #ifndef __IPHONE_3_0
 @synthesize webView;
 #endif
@@ -87,6 +90,16 @@
 	[mpVolumeViewParentView addSubview: myVolumeView];
 	self.myVolumeView.showsVolumeSlider = NO;
 	self.myVolumeView.showsRouteButton = NO;
+
+	volumeViewSlider = nil;
+    for (UIView *view in [self.myVolumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            volumeViewSlider = (UISlider*)view;
+            NSLog(@"Found MPVolumeslider :  %f" ,userVolume );
+            break;
+        }
+    }
+    userVolume = volumeViewSlider.value;
 }
 - (void)setVolumeSlider:(CDVInvokedUrlCommand *)command
 {
